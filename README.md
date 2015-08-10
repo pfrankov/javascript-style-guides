@@ -17,20 +17,20 @@
 	
 	console.log(foo, bar); // => 1, 9
 	```
-	- **Complex**: When you access a complex type you work on a reference to its value.
+- **Complex**: When you access a complex type you work on a reference to its value.
 
-		+ `object`
-		+ `array`
-		+ `function`
+	+ `object`
+	+ `array`
+	+ `function`
 
-		```javascript
-		var foo = [1, 2];
-		var bar = foo;
-		
-		bar[0] = 9;
-		
-		console.log(foo[0], bar[0]); // => 9, 9
-		```
+	```javascript
+	var foo = [1, 2];
+	var bar = foo;
+	
+	bar[0] = 9;
+	
+	console.log(foo[0], bar[0]); // => 9, 9
+	```
 
 
 ## Objects
