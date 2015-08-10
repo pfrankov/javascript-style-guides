@@ -50,13 +50,17 @@
 	```javascript
 	// bad
 	var superman = {
-		default: { clark: 'kent' },
+		default: {
+			clark: 'kent'
+		},
 		private: true
 	};
 	
 	// good
 	var superman = {
-		defaults: { clark: 'kent' },
+		defaults: {
+			clark: 'kent'
+		},
 		hidden: true
 	};
 	```
@@ -109,12 +113,10 @@
 - When you need to copy an array use Array#slice. [jsPerf](http://jsperf.com/converting-arguments-to-an-array/7)
 
 	```javascript
-	var len = items.length;
 	var itemsCopy = [];
-	var i;
 	
 	// bad
-	for (i = 0; i < len; i++) {
+	for (var i = 0; i < items.length; i++) {
 		itemsCopy[i] = items[i];
 	}
 	
@@ -179,12 +181,12 @@
 
 	```javascript
 	// anonymous function expression
-	var anonymous = function() {
+	function() {
 		return true;
 	};
 	
 	// named function expression
-	var named = function named() {
+	function named() {
 		return true;
 	};
 	
@@ -197,22 +199,6 @@
 - Never declare a function in a non-function block (if, while, etc). Assign the function to a variable instead. Browsers will allow you to do it, but they all interpret it differently, which is bad news bears.
 - **Note:** ECMA-262 defines a `block` as a list of statements. A function declaration is not a statement. [Read ECMA-262's note on this issue](http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf#page=97).
 
-	```javascript
-	// bad
-	if (currentUser) {
-		function test() {
-			console.log('Nope.');
-		}
-	}
-	
-	// good
-	var test;
-	if (currentUser) {
-		test = function test() {
-			console.log('Yup.');
-		};
-	}
-	```
 
 - Never name a parameter `arguments`. This will take precedence over the `arguments` object that is given to every function scope.
 
