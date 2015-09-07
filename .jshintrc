@@ -1,0 +1,18 @@
+{
+	"node": true,
+	"browser": true,
+	"devel": true,
+	"bitwise": true,
+	"curly": true,
+	"eqeqeq": true,
+	"latedef": "nofunc",
+	"undef": true,
+	"unused": true,
+	"globals": {
+		"angular": false,
+		"describe": false,
+		"beforeEach": false,
+		"it": false,
+		"expect": false
+	}
+}
